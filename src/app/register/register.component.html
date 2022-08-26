@@ -1,0 +1,53 @@
+
+   <div class="container col-md-12 mt-0">
+	  <div class="d-flex justify-content-center h-100">
+		  <div class="card">
+			  <div class="card-header">
+				  <h3 class="text-center">Sign Up</h3>
+				  
+			  </div>
+			  <div class="card-body">
+				<form [formGroup]="registerForm"  (ngSubmit)="register()">
+			<div class="input-group form-group">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text"><i class="fas fa-user"></i></span>
+						  </div>
+						  <input type="text" class="form-control" name="username" formControlName="username" placeholder="enter your username"  id="username" required>
+						  <div *ngIf="this.registerForm.get('username')?.touched &&this.registerForm.get('username')?.errors"style="color: red;"> Username should be minimum 6 characters</div>
+						  
+					  </div>
+					  <div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="email" class="form-control" name="email" formControlName="email" placeholder="enter your email"  id="email" required>
+						<div *ngIf="this.registerForm.get('email')?.touched &&this.registerForm.get('email')?.errors"style="color: red;">Invalid email</div>
+						
+					</div>
+  
+					  <div class="input-group form-group">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text"><i class="fas fa-user"></i></span>
+						  </div>
+						  <input type="password" class="form-control" name="password" formControlName="password" placeholder="enter your password"  id="pswd" required>
+						  <div *ngIf="this.registerForm.get('password')?.touched &&this.registerForm.get('password')?.errors"style="color: red;"> Password must contain special characters</div>
+					  </div>
+					  <div class="input-group form-group">
+						  <div class="input-group-prepend">
+							  <span class="input-group-text"><i class="fas fa-key"></i></span>
+						  </div>
+						  
+					 <input type="password" class="form-control" name="cpassword" formControlName="cpassword"  placeholder="re-enter the password"  id="cpswd" required>
+					 <div *ngIf="this.registerForm.get('cpassword')?.touched &&this.registerForm.get('cpassword')?.errors"style="color: red;"> Password must contain special characters</div> 
+					 
+					</div>
+					  
+					  <div class="form-group">
+						  <input type="submit" value="Register" class="btn float-right login_btn " style="width:50%" >
+					  </div>
+				  </form>
+			  </div>
+			  <p style="color:white;align-items:baseline;">Already a user? <a routerLink="login">Sign In</a></p>
+		  </div>
+	  </div>
+  </div>
